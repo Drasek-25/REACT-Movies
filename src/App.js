@@ -11,12 +11,9 @@ function App() {
   const [displayMode, setDisplayMode] = useState('Movies')
   const [movieSelection, setMovieSelection] = useState('')
 
-  const handleMovieSelection = (e) => {
-    setMovieSelection(Data.filter(x => x.title === e.target.name))
-  }
-
   const handleSetDisplayMode = (e) => {
-    setDisplayMode(e.target.name)
+    movieSelection === '' && alert('Please select a movie from the navigation bar below')
+    movieSelection !== '' && setDisplayMode(e.target.name)
   }
 
   const movieName = Data.map(obj => obj.Title)
@@ -79,11 +76,13 @@ function App() {
   }
   return (
     <div className="App">
-      <NavBar handleSetDisplayMode={handleSetDisplayMode} />
-      <div className="Display">
-        {getDisplay()}
+      <div className="Wrapper">
+        <NavBar handleSetDisplayMode={handleSetDisplayMode} />
+        <div className="Display">
+          {getDisplay()}
+        </div>
       </div>
-    </div>
+    </div >
   );
 }
 

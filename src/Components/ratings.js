@@ -13,7 +13,7 @@ const Ratings = ({ title, getRatings }) => {
                     return (
                         <tr>
                             <td>{index + 1}</td>
-                            <td><b>{obj.Source}: </b>{obj.Value}</td>
+                            <td><b>{obj.Source} : </b>{obj.Value}</td>
                         </tr>
                     )
                 })}
